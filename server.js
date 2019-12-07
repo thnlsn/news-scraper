@@ -16,11 +16,18 @@ app.set('view engine', 'handlebars');
 
 // Routing
 app.get('/', (req, res) => {
-  res.render('index', { layout: false });
+  res.render('index', {
+    layout: false,
+    title: 'Home Page',
+    name: 'Thomas Nelson'
+  });
 });
 
 app.get('/about', (req, res) => {
-  res.render('about', { layout: false });
+  res.render('about', {
+    layout: false,
+    title: 'About Page'
+  });
 });
 
 app.listen(PORT, () =>
