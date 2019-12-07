@@ -2,8 +2,18 @@ const express = require('express');
 const app = express();
 const exphbs = require('express-handlebars');
 const path = require('path');
+const mongoose = require('mongoose');
 
 let PORT = process.env.PORT || 8080;
+
+/* mongoose.connect(`mongodb://localhost:${PORT}/scraper-test`, {
+  useNewUrlParser: true
+}); */
+
+let MONGODB_URI =
+  process.env.MONGODB_URI || 'mongodb://localhost/mongoHeadlines';
+
+mongoose.connect(MONGODB_URI);
 
 app.engine(
   'handlebars',
