@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-S;
+let Schema = mongoose.Schema;
 
 const articleSchema = new Schema({
   _id: ObjectId,
@@ -9,4 +8,6 @@ const articleSchema = new Schema({
   url: String
 });
 
-module.exports = articleSchema;
+const Article = mongoose.model('Article', articleSchema);
+
+module.exports = Article;

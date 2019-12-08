@@ -1,10 +1,11 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-S;
+let Schema = mongoose.Schema;
 
 const commentSchema = new Schema({
   _id: ObjectId,
   text: String
 });
 
-module.exports = commentSchema;
+const Comment = mongoose.model('Comment', commentSchema);
+
+module.exports = Comment;
