@@ -26,17 +26,16 @@ app.set('view engine', 'handlebars');
 
 // Routing
 app.get('/', (req, res) => {
-  res.render('index', {
+  res.render('home', {
     layout: false,
-    title: 'Home Page',
-    name: 'Thomas Nelson'
+    title: 'Home Page'
   });
 });
 
-app.get('/about', (req, res) => {
-  res.render('about', {
+app.get('/saved', (req, res) => {
+  res.render('saved', {
     layout: false,
-    title: 'About Page'
+    title: 'Saved Articles Page'
   });
 });
 
