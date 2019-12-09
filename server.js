@@ -29,8 +29,10 @@ app.engine(
 );
 app.set('view engine', 'handlebars');
 
+// This makes every request go through the router middleware
 app.use(router);
 
+// This allows the routes set in config/routes.js to be used
 require('./config/routes')(router);
 
 // Allows the app to use the deployed database IF exists, otherwise it will use a local one (mongoHeadlines)
@@ -45,6 +47,7 @@ mongoose.connect(db, err => {
   }
 });
 
+// Listen on a port
 app.listen(PORT, () =>
   console.log(
     `▓▓ Listening on port ${PORT}. Visit http://localhost:${PORT}/ in your browser.`

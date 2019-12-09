@@ -1,11 +1,61 @@
-<h1>Hello World!</h1>
-<p>Welcome to my app!</p>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">News Scraper</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/saved">Saved</a>
+            </li>
+            <li>
+                <button type="button" class="btn btn-success ▓left-2"> Find New Articles </button>
+            </li>
+            <li>
+                <button type="button" class="btn btn-outline-success ▓left-1"> Clear Articles </button>
+            </li>
+        </ul>
+    </div>
+</nav>
 
-<p>My name is {{name}}</p>
-<div class="alert alert-primary" role="alert">
-    A simple primary alert—check it out!!!
+<div class="jumbotron text-center bg-light">
+    <h1 class="display-4">TechCrunch Scraper</h1>
 </div>
 
+<div class="container-fluid bg-dark">
+    {{!-- This is where the scraped articles will append to --}}
+</div>
+
+<footer class="footer">
+    <div class="bg-dark text-light">
+        <a class="▓left-1" href="https://github.com/thnlsn/news-scraper"><i class="fab fa-github"></i> TechCrunch
+            Scraper</a>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{!-- Script Tags --}}
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
