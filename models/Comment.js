@@ -1,3 +1,5 @@
+// MONGOOSE SCHEMA FOR COMMENTS (INDICATES WHAT TO SAVE TO TABLE)
+
 const mongoose = require('mongoose');
 let Schema = mongoose.Schema;
 
