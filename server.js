@@ -19,6 +19,12 @@ const mongoose = require('mongoose');
   useNewUrlParser: true
 }); */
 
+const scrape = require('./scripts/scrape');
+scrape();
+
+const createDate = require('./scripts/date');
+createDate();
+
 app.use(express.static(`${__dirname}/public`));
 
 app.engine(

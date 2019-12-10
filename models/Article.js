@@ -4,10 +4,21 @@ const mongoose = require('mongoose');
 let Schema = mongoose.Schema;
 
 const articleSchema = new Schema({
-  _id: ObjectId,
-  headline: String,
-  summary: String,
-  url: String
+  headline: {
+    type: String,
+    required: true,
+    unique: true // Unique makes it so tht we are not scraping the same articles over and over into out database
+  },
+  summary: {
+    type: String,
+    required: true
+  },
+  date: String,
+  saved: {
+    type: Boolean,
+    default: false
+  }
+  /*   url: String */
 });
 
 const Article = mongoose.model('Article', articleSchema);
