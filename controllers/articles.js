@@ -13,6 +13,8 @@ module.exports = {
         articles[i].date = createDate();
         articles[i].saved = false;
       }
+
+      Article.collection.insert;
     });
   }
 };
