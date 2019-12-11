@@ -47,5 +47,11 @@ module.exports = router => {
     });
   });
 
-  router.get;
+  router.delete('api/headlines/:id', (req, res) => {
+    let query = {};
+    query._id = req.params.id;
+    articlesController.delete(query, (err, data) => {
+      res.json(data);
+    });
+  });
 };
