@@ -87,6 +87,5 @@ module.exports = router => {
     commentsController.save(req.body, data => {
       res.json(data);
     });
-    a;
   });
 };
