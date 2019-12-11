@@ -73,4 +73,19 @@ module.exports = router => {
       res.json(data);
     });
   });
+
+  router.delete('api/comments/:id', (req, res) => {
+    let query = {};
+    query._id = req.params.id;
+
+    commentsController.delete(query, (err, data) => {
+      res.json(data);
+    });
+  });
+
+  router.post('/api/comments', (req, res) => {
+    commentsController.save(req.body, data => {
+      res.json(data);
+    });
+  });
 };
