@@ -55,8 +55,21 @@ module.exports = router => {
     });
   });
 
+  // run the update function on whatever the user sends in req (update)
   router.patch('api/headlines', (req, res) => {
     articlesController.update(req.body, (err, data) => {
+      res.json(data);
+    });
+  });
+
+  // grab all notes associated with an article
+  router.get('api/notes/:headline_id?', (req, res) => {
+    let query = {};
+    if (req.params.headline_id) {
+      query._id = req.params.headline_id;
+    }
+
+    commentsController.get(query, (req, res) => {
       res.json(data);
     });
   });
