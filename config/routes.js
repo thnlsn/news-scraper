@@ -54,4 +54,10 @@ module.exports = router => {
       res.json(data);
     });
   });
+
+  router.patch('api/headlines', (req, res) => {
+    articlesController.update(req.body, (err, data) => {
+      res.json(data);
+    });
+  });
 };
