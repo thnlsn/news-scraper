@@ -30,11 +30,11 @@ $(document).ready(() => {
   function createPanel(article) {
     let panel = $(
       [
-        "<div class='panel panel-default'>",
+        "<div class='panel panel-default mt-2 bg-light'>",
         "<div class='panel-heading'>",
         '<h3>',
         article.headline,
-        "<a class='btn btn-success save'>",
+        "<a class='btn btn-success save text-white float-right border-top-0 border-right-0'>",
         'Save Article',
         '</a>',
         '</h3>',
