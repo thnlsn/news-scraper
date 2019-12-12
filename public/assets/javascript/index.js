@@ -1,11 +1,14 @@
+console.log('index.js working');
 $(document).ready(() => {
   let articleContainer = $('.article-container');
+
   $(document).on('click', '.btn.save', handleArticleSave);
   $(document).on('click', '.scrape-new', handleArticleScrape);
+  $(document).on('click', '.clear', renderEmpty);
 
   initPage();
 
-  const initPage = () => {
+  function initPage() {
     articleContainer.empty();
     $.get('api/headlines?saved=false').then(data => {
       if (data && data.length) {
@@ -14,17 +17,17 @@ $(document).ready(() => {
         renderEmpty();
       }
     });
-  };
+  }
 
-  const renderArticles = articles => {
+  function renderArticles(articles) {
     let articlePanels = [];
     for (let i = 0; i < articles.length; i++) {
       articlePanels.push(createPanel(articles[i]));
     }
     articleContainer.append(articlePanels);
-  };
+  }
 
-  const createPanel = article => {
+  function createPanel(article) {
     let panel = $(
       [
         "<div class='panel panel-default'>",
@@ -45,9 +48,10 @@ $(document).ready(() => {
 
     panel.data('_id', article._id);
     return panel;
-  };
+  }
 
-  const renderEmpty = () => {
+  function renderEmpty() {
+    articleContainer.empty();
     let emptyAlert = $(
       [
         "<div class='alert alert-warning text-center'>",
@@ -65,9 +69,9 @@ $(document).ready(() => {
       ].join('')
     );
     articleContainer.append(emptyAlert);
-  };
+  }
 
-  const handleArticleSave = () => {
+  function handleArticleSave() {
     let articleToSave = $(this)
       .parents('.panel')
       .data();
@@ -83,12 +87,13 @@ $(document).ready(() => {
         initPage();
       }
     });
-  };
+  }
 
-  const handleArticleScrape = () => {
+  function handleArticleScrape() {
     $.get('api/fetch').then(data => {
       initPage();
+      console.log(data.message);
       bootbox.alert(`<h3 class='text-center m-top-80'>${data.message}</h3>`);
     });
-  };
+  }
 });
